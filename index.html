@@ -2,7 +2,10 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1,
+        viewport-fit=cover">
 
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
@@ -10,15 +13,19 @@
 
   <meta name="theme-color" content="#0c7fa0">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Mac II">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+
+  <title>Mac II</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,
+      "Segoe UI",Roboto,sans-serif;
       -webkit-tap-highlight-color:transparent;
       user-select:none;
     }
@@ -34,7 +41,6 @@
       position:fixed;
       inset:0;
       display:none;
-      background:#f5f5f5;
       overflow:hidden;
     }
 
@@ -50,20 +56,27 @@
       pointer-events:none;
     }
 
-    .home-bg{ background-image:url("giaodienchinh.jpg"); }
-    .sign-bg{ background-image:url("chuky.jpg"); }
-    .me-bg{ background-image:url("muccuatoi.jpg"); }
+    .home-bg{
+      background-image:url("giaodienchinh.jpg");
+    }
+
+    .sign-bg{
+      background-image:url("chuky.jpg");
+    }
+
+    .me-bg{
+      background-image:url("muccuatoi.jpg");
+    }
 
     .btn{
       position:absolute;
       z-index:999;
-      pointer-events:auto;
       touch-action:manipulation;
     }
 
     .btn:active{
-      transform:scale(0.96);
-      opacity:0.75;
+      transform:scale(.96);
+      opacity:.7;
     }
 
     .login-btn{
@@ -73,29 +86,17 @@
       height:7%;
       top:58%;
       border-radius:40px;
-      z-index:10000;
     }
 
     .btn-tab{
       bottom:0;
-      height:80px;
       width:33.33%;
+      height:80px;
     }
 
     .home-tab{ left:0; }
     .sign-tab{ left:33.33%; }
     .me-tab{ left:66.66%; }
-
-    .me-btn{
-      width:90%;
-      left:5%;
-      height:60px;
-    }
-
-    .me-btn.top1{ top:220px; }
-    .me-btn.top2{ top:285px; }
-    .me-btn.top3{ top:350px; }
-    .me-btn.top4{ top:415px; }
 
     .quick-phone{
       left:50%;
@@ -104,32 +105,40 @@
       height:11%;
       top:53%;
       border-radius:20px;
-      z-index:9999;
     }
 
-    .quick-phone:active{
-      transform:translateX(-50%) scale(0.97);
-      opacity:0.7;
+    .me-btn{
+      width:90%;
+      left:5%;
+      height:60px;
     }
+
+    .top1{ top:220px; }
+    .top2{ top:285px; }
+    .top3{ top:350px; }
+    .top4{ top:415px; }
 
     #phone{
-      position:fixed;
-      inset:0;
       background:#f5f5f5;
       overflow-y:auto;
       -webkit-overflow-scrolling:touch;
-      padding-bottom:env(safe-area-inset-bottom);
     }
 
     .header{
       width:100%;
       background:#0c7fa0;
-      color:white;
+      color:#fff;
+
       text-align:center;
-      padding-top:calc(env(safe-area-inset-top) + 14px);
-      padding-bottom:13px;
-      font-size:18px;
+
+      padding-top:
+      calc(env(safe-area-inset-top) + 14px);
+
+      padding-bottom:14px;
+
+      font-size:19px;
       font-weight:600;
+
       position:sticky;
       top:0;
       z-index:1000;
@@ -140,15 +149,14 @@
       font-size:26px;
       margin-top:10px;
       color:#111;
-      line-height:1.1;
     }
 
     .time{
       text-align:center;
-      font-size:64px;
+      font-size:66px;
       font-weight:600;
       color:#1e40ff;
-      line-height:1.05;
+      line-height:1;
       margin-bottom:14px;
     }
 
@@ -158,40 +166,51 @@
       padding:0 8px 12px;
     }
 
-    .buttons .btn2{
+    .btn2{
       flex:1;
       padding:12px 0;
-      border-radius:5px;
-      text-align:center;
+      border-radius:6px;
       color:#fff;
+      text-align:center;
       font-size:18px;
       font-weight:500;
     }
 
-    .light{ background:#9ad7ea; }
-    .dark{ background:#1e22ff; }
+    .light{
+      background:#9ad7ea;
+    }
+
+    .dark{
+      background:#1e22ff;
+    }
 
     .card{
       width:calc(100% - 16px);
+
       margin:6px auto 20px;
+
       border:10px solid #1f7a1f;
+
       background:#fff;
+
       padding:16px 14px;
+
       color:#1f7a1f;
+
       font-size:16px;
+
       line-height:1.5;
     }
 
     .card h3{
-      font-size:21px;
-      font-weight:700;
       text-align:center;
+      font-size:21px;
       margin-bottom:12px;
       line-height:1.25;
     }
 
     .card p{
-      margin:3px 0;
+      margin:4px 0;
     }
 
     .watermark{
@@ -203,81 +222,180 @@
 
     .watermark span{
       position:absolute;
-      color:rgba(0,0,0,0.045);
+      color:rgba(0,0,0,.045);
       font-size:14px;
       transform:rotate(-25deg);
       white-space:nowrap;
     }
+
   </style>
 </head>
 
 <body>
 
+<!-- LOGIN -->
+
 <div id="login" class="screen active">
-  <div class="bg" style="background-image:url('manhinhdangnhap.jpg')"></div>
-  <div class="btn login-btn" onclick="loginApp()"></div>
+
+  <div class="bg"
+       style="background-image:url('manhinhdangnhap.jpg')">
+  </div>
+
+  <div class="btn login-btn"
+       onclick="loginApp()">
+  </div>
+
 </div>
+
+<!-- HOME -->
 
 <div id="home" class="screen">
+
   <div class="bg home-bg"></div>
-  <div class="btn quick-phone" onclick="openPhone()"></div>
-  <div class="btn btn-tab sign-tab" onclick="showTab('sign')"></div>
-  <div class="btn btn-tab me-tab" onclick="showTab('me')"></div>
+
+  <div class="btn quick-phone"
+       onclick="openPhone()">
+  </div>
+
+  <div class="btn btn-tab sign-tab"
+       onclick="showTab('sign')">
+  </div>
+
+  <div class="btn btn-tab me-tab"
+       onclick="showTab('me')">
+  </div>
+
 </div>
+
+<!-- SIGN -->
 
 <div id="sign" class="screen">
+
   <div class="bg sign-bg"></div>
-  <div class="btn btn-tab home-tab" onclick="showTab('home')"></div>
-  <div class="btn btn-tab me-tab" onclick="showTab('me')"></div>
+
+  <div class="btn btn-tab home-tab"
+       onclick="showTab('home')">
+  </div>
+
+  <div class="btn btn-tab me-tab"
+       onclick="showTab('me')">
+  </div>
+
 </div>
 
-<div id="me" class="screen">
-  <div class="bg me-bg"></div>
-  <div class="btn btn-tab home-tab" onclick="showTab('home')"></div>
-  <div class="btn btn-tab sign-tab" onclick="showTab('sign')"></div>
+<!-- ME -->
 
-  <div class="btn me-btn top1" onclick="openPhone()"></div>
+<div id="me" class="screen">
+
+  <div class="bg me-bg"></div>
+
+  <div class="btn btn-tab home-tab"
+       onclick="showTab('home')">
+  </div>
+
+  <div class="btn btn-tab sign-tab"
+       onclick="showTab('sign')">
+  </div>
+
+  <div class="btn me-btn top1"
+       onclick="openPhone()">
+  </div>
+
   <div class="btn me-btn top2"></div>
   <div class="btn me-btn top3"></div>
   <div class="btn me-btn top4"></div>
+
 </div>
 
+<!-- PHONE -->
+
 <div id="phone" class="screen">
+
   <div class="watermark" id="wm"></div>
 
-  <div class="header">智能手機標籤</div>
+  <div class="header">
+    智能手機標籤
+  </div>
 
   <div class="date" id="dateText"></div>
+
   <div class="time" id="timeText"></div>
 
   <div class="buttons">
-    <div class="btn2 light">Mã QR</div>
-    <div class="btn2 dark">Thẻ kiểm soát</div>
+
+    <div class="btn2 light">
+      Mã QR
+    </div>
+
+    <div class="btn2 dark">
+      Thẻ kiểm soát
+    </div>
+
   </div>
 
   <div class="card">
+
     <h3>
       Mac II Mang theo điện thoại thông minh/<br>
       đồng hồ<br>
       Thẻ kiểm soát1
     </h3>
 
-    <p><b>Mã nhân viên:</b> V2160066</p>
-    <p><b>Tên:</b> 甲文猛</p>
-    <p><b>Mục đích sử dụng:</b> 辦公APP</p>
-    <p><b>Thương hiệu điện thoại:</b> Iphone</p>
-    <p><b>Model điện thoại:</b> 11 Pro Max</p>
-    <p><b>Màu điện thoại:</b> 黑色</p>
-    <p><b>Số serial điện thoại:</b> FK1DFEAAN70C</p>
-    <p><b>Khu vực được ủy quyền bổ sung:</b> 辦公APP</p>
+    <p>
+      <b>Mã nhân viên:</b>
+      <span id="employeeId"></span>
+    </p>
+
+    <p>
+      <b>Tên:</b>
+      <span id="userName"></span>
+    </p>
+
+    <p>
+      <b>Mục đích sử dụng:</b>
+      <span id="purpose"></span>
+    </p>
+
+    <p>
+      <b>Thương hiệu điện thoại:</b>
+      <span id="brand"></span>
+    </p>
+
+    <p>
+      <b>Model điện thoại:</b>
+      <span id="model"></span>
+    </p>
+
+    <p>
+      <b>Màu điện thoại:</b>
+      <span id="color"></span>
+    </p>
+
+    <p>
+      <b>Số serial điện thoại:</b>
+      <span id="serial"></span>
+    </p>
+
+    <p>
+      <b>Khu vực được ủy quyền bổ sung:</b>
+      <span id="area"></span>
+    </p>
+
   </div>
+
 </div>
 
 <script>
+
 const AUTH_URL =
 "https://raw.githubusercontent.com/duclinh2607/maci-auth/main/allowed.json";
 
+let currentUser = null;
+
+/* LOGIN */
+
 async function loginApp(){
+
   const code = prompt("Nhập mã truy cập:");
 
   if(!code){
@@ -286,111 +404,258 @@ async function loginApp(){
   }
 
   try{
-    const res = await fetch(AUTH_URL + "?t=" + Date.now(), {
-      cache:"no-store"
-    });
+
+    const res = await fetch(
+      AUTH_URL + "?t=" + Date.now(),
+      {
+        cache:"no-store"
+      }
+    );
 
     const data = await res.json();
 
     if(data.enabled === false){
+
       alert("Ứng dụng đã bị khóa!");
+
       return;
     }
 
-    const codes = data.codes || [];
+    const users = data.users || [];
 
-    let allowed = false;
+    currentUser = users.find(user =>
 
-    for(let i=0;i<codes.length;i++){
-      const serverCode = String(codes[i]).trim().toLowerCase();
+      String(user.code)
+      .trim()
+      .toLowerCase()
 
-      if(serverCode === code.trim().toLowerCase()){
-        allowed = true;
-        break;
-      }
-    }
+      ===
 
-    if(allowed){
+      code.trim().toLowerCase()
+
+    );
+
+    if(currentUser){
+
+      fillUserInfo(currentUser);
+
       showTab("home");
+
     }else{
+
       alert("Mã sai hoặc đã bị thu hồi!");
+
     }
 
   }catch(e){
-    alert("Không thể kiểm tra quyền!");
+
+    alert("Không thể kết nối server!");
+
   }
 }
 
-function showTab(tab){
-  document.querySelectorAll(".screen").forEach(s=>{
-    s.classList.remove("active");
-  });
-  document.getElementById(tab).classList.add("active");
+/* LOAD USER */
+
+function fillUserInfo(user){
+
+  document.getElementById("employeeId")
+  .innerText = user.employeeId || "";
+
+  document.getElementById("userName")
+  .innerText = user.name || "";
+
+  document.getElementById("purpose")
+  .innerText = user.purpose || "";
+
+  document.getElementById("brand")
+  .innerText = user.brand || "";
+
+  document.getElementById("model")
+  .innerText = user.model || "";
+
+  document.getElementById("color")
+  .innerText = user.color || "";
+
+  document.getElementById("serial")
+  .innerText = user.serial || "";
+
+  document.getElementById("area")
+  .innerText = user.area || "";
+
+  updateWatermark(
+    user.employeeId + " " + user.name
+  );
 }
+
+/* TAB */
+
+function showTab(tab){
+
+  document.querySelectorAll(".screen")
+  .forEach(s=>{
+
+    s.classList.remove("active");
+
+  });
+
+  document.getElementById(tab)
+  .classList.add("active");
+}
+
+/* OPEN PHONE */
 
 function openPhone(){
+
   showTab("phone");
+
 }
 
+/* TIME */
+
 function updateTime(){
+
   const now = new Date();
-  const days = ["Chủ Nhật","Hai","Ba","Tư","Năm","Sáu","Bảy"];
 
-  document.getElementById("dateText").innerText =
-    now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+
-    " Thứ "+days[now.getDay()];
+  const days = [
+    "Chủ Nhật",
+    "Hai",
+    "Ba",
+    "Tư",
+    "Năm",
+    "Sáu",
+    "Bảy"
+  ];
 
-  document.getElementById("timeText").innerText =
-    String(now.getHours()).padStart(2,"0")+":"+
-    String(now.getMinutes()).padStart(2,"0")+":"+
-    String(now.getSeconds()).padStart(2,"0");
+  document.getElementById("dateText")
+  .innerText =
+
+  now.getFullYear()+"-"+
+
+  (now.getMonth()+1)+"-"+
+
+  now.getDate()
+
+  +" Thứ "+days[now.getDay()];
+
+  document.getElementById("timeText")
+  .innerText =
+
+  String(now.getHours())
+  .padStart(2,"0")
+
+  +":"
+
+  +
+
+  String(now.getMinutes())
+  .padStart(2,"0")
+
+  +":"
+
+  +
+
+  String(now.getSeconds())
+  .padStart(2,"0");
 }
 
 setInterval(updateTime,1000);
+
 updateTime();
 
-const wm = document.getElementById("wm");
-const text = "V2160066 甲文猛";
+/* WATERMARK */
 
-for(let i=0;i<8;i++){
-  let top=(i+1)*(100/9);
+function updateWatermark(text){
 
-  let l=document.createElement("span");
-  l.innerText=text;
-  l.style.left="8%";
-  l.style.top=top+"%";
-  wm.appendChild(l);
+  const wm =
+  document.getElementById("wm");
 
-  let r=document.createElement("span");
-  r.innerText=text;
-  r.style.left="58%";
-  r.style.top=(top+3)+"%";
-  wm.appendChild(r);
+  wm.innerHTML = "";
+
+  for(let i=0;i<8;i++){
+
+    let top =
+    (i+1)*(100/9);
+
+    let l =
+    document.createElement("span");
+
+    l.innerText = text;
+
+    l.style.left = "8%";
+
+    l.style.top = top+"%";
+
+    wm.appendChild(l);
+
+    let r =
+    document.createElement("span");
+
+    r.innerText = text;
+
+    r.style.left = "58%";
+
+    r.style.top = (top+3)+"%";
+
+    wm.appendChild(r);
+  }
 }
 
-let startX=0,endX=0;
+/* SWIPE */
 
-document.addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
+let startX = 0;
+let endX = 0;
+
+document.addEventListener(
+"touchstart",
+
+e=>{
+
+  startX =
+  e.touches[0].clientX;
+
 });
 
-document.addEventListener("touchend",e=>{
-  endX=e.changedTouches[0].clientX;
-  let diff=endX-startX;
-  if(Math.abs(diff)<50) return;
+document.addEventListener(
+"touchend",
 
-  const c=document.querySelector(".screen.active").id;
+e=>{
+
+  endX =
+  e.changedTouches[0].clientX;
+
+  let diff =
+  endX-startX;
+
+  if(Math.abs(diff)<50)
+  return;
+
+  const c =
+  document.querySelector(".screen.active").id;
 
   if(diff>0){
-    if(c==="sign") showTab("home");
-    else if(c==="me") showTab("sign");
-    else if(c==="phone") showTab("me");
+
+    if(c==="sign")
+    showTab("home");
+
+    else if(c==="me")
+    showTab("sign");
+
+    else if(c==="phone")
+    showTab("me");
+
   }else{
-    if(c==="home") showTab("sign");
-    else if(c==="sign") showTab("me");
-    else if(c==="me") showTab("phone");
+
+    if(c==="home")
+    showTab("sign");
+
+    else if(c==="sign")
+    showTab("me");
+
+    else if(c==="me")
+    showTab("phone");
   }
 });
+
 </script>
 
 </body>
