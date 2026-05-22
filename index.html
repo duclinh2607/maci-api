@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="manifest.json">
@@ -15,36 +18,24 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-      -webkit-tap-highlight-color: transparent;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      -webkit-tap-highlight-color:transparent;
+      user-select:none;
     }
 
     html,body{
       width:100%;
       height:100%;
       overflow:hidden;
-      background:#000;
-    }
-
-    /* LOGIN BUTTON */
-    .login-btn{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      width:78%;
-      height:7%;
-      top:58%;
-      border-radius:40px;
-      z-index:10000;
+      background:#f5f5f5;
     }
 
     .screen{
-      position:absolute;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
+      position:fixed;
+      inset:0;
       display:none;
+      background:#f5f5f5;
+      overflow:hidden;
     }
 
     .screen.active{
@@ -53,8 +44,7 @@
 
     .bg{
       position:absolute;
-      width:100%;
-      height:100%;
+      inset:0;
       background-size:cover;
       background-position:center;
       pointer-events:none;
@@ -72,8 +62,18 @@
     }
 
     .btn:active{
-      transform:scale(0.92);
-      opacity:0.6;
+      transform:scale(0.96);
+      opacity:0.75;
+    }
+
+    .login-btn{
+      left:50%;
+      transform:translateX(-50%);
+      width:78%;
+      height:7%;
+      top:58%;
+      border-radius:40px;
+      z-index:10000;
     }
 
     .btn-tab{
@@ -97,9 +97,7 @@
     .me-btn.top3{ top:350px; }
     .me-btn.top4{ top:415px; }
 
-    /* ===== QUICK BUTTON (MỚI) ===== */
     .quick-phone{
-      position:absolute;
       left:50%;
       transform:translateX(-50%);
       width:92%;
@@ -115,134 +113,124 @@
     }
 
     #phone{
+      position:fixed;
+      inset:0;
       background:#f5f5f5;
-      position:relative;
-      overflow-x:hidden;
-      }
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      padding-bottom:env(safe-area-inset-bottom);
+    }
 
-
- .header{
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-
-  background:#0c7fa0;
-  color:#ffffff;
-
-  text-align:center;
-
-  padding:
-    calc(env(safe-area-inset-top, 20px) + 12px)
-    16px
-    14px;
-
-  font-size:20px;
-  font-weight:500;
-
-  position:relative;
-  z-index:5;
-}
+    .header{
+      width:100%;
+      background:#0c7fa0;
+      color:white;
+      text-align:center;
+      padding-top:calc(env(safe-area-inset-top) + 14px);
+      padding-bottom:13px;
+      font-size:18px;
+      font-weight:600;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
 
     .date{
       text-align:center;
-      font-size:28px;
+      font-size:26px;
       margin-top:10px;
+      color:#111;
+      line-height:1.1;
     }
 
     .time{
       text-align:center;
       font-size:64px;
-      font-weight:500;
+      font-weight:600;
       color:#1e40ff;
+      line-height:1.05;
+      margin-bottom:14px;
     }
 
     .buttons{
       display:flex;
-      gap:10px;
-      padding:10px;
+      gap:8px;
+      padding:0 8px 12px;
     }
 
     .buttons .btn2{
       flex:1;
-      padding:10px 0;
-      border-radius:6px;
+      padding:12px 0;
+      border-radius:5px;
       text-align:center;
       color:#fff;
-      font-size:14px;
+      font-size:18px;
+      font-weight:500;
     }
 
     .light{ background:#9ad7ea; }
     .dark{ background:#1e22ff; }
 
-.card{
-  width: calc(100% - 20px);   /* bù lại margin */
-  margin:10px auto;
-  border:16px solid #1f7a1f;
-  background:#fff;
-  padding:15px;
-  color:#1f7a1f;
-  font-size:14px;
-}
+    .card{
+      width:calc(100% - 16px);
+      margin:6px auto 20px;
+      border:10px solid #1f7a1f;
+      background:#fff;
+      padding:16px 14px;
+      color:#1f7a1f;
+      font-size:16px;
+      line-height:1.5;
+    }
 
     .card h3{
-    font-size:16px;
-    font-weight:700;
+      font-size:21px;
+      font-weight:700;
       text-align:center;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      line-height:1.25;
     }
 
     .card p{
-      margin:4px 0;
+      margin:3px 0;
     }
 
-    /* WATERMARK */
     .watermark{
       position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      inset:0;
       pointer-events:none;
-      z-index:9999;
+      z-index:10;
     }
 
     .watermark span{
       position:absolute;
-      color:rgba(0,0,0,0.06);
-      font-size:18px;
+      color:rgba(0,0,0,0.045);
+      font-size:14px;
       transform:rotate(-25deg);
       white-space:nowrap;
     }
-
   </style>
 </head>
 
 <body>
-<div class="status-bar"></div>
-<!-- LOGIN -->
+
 <div id="login" class="screen active">
   <div class="bg" style="background-image:url('manhinhdangnhap.jpg')"></div>
   <div class="btn login-btn" onclick="loginApp()"></div>
 </div>
 
-<!-- HOME -->
 <div id="home" class="screen">
   <div class="bg home-bg"></div>
-
-  <!-- NÚT NHANH -->
   <div class="btn quick-phone" onclick="openPhone()"></div>
-
   <div class="btn btn-tab sign-tab" onclick="showTab('sign')"></div>
   <div class="btn btn-tab me-tab" onclick="showTab('me')"></div>
 </div>
 
-<!-- SIGN -->
 <div id="sign" class="screen">
   <div class="bg sign-bg"></div>
   <div class="btn btn-tab home-tab" onclick="showTab('home')"></div>
   <div class="btn btn-tab me-tab" onclick="showTab('me')"></div>
 </div>
 
-<!-- ME -->
 <div id="me" class="screen">
   <div class="bg me-bg"></div>
   <div class="btn btn-tab home-tab" onclick="showTab('home')"></div>
@@ -254,14 +242,10 @@
   <div class="btn me-btn top4"></div>
 </div>
 
-<!-- PHONE -->
 <div id="phone" class="screen">
-
   <div class="watermark" id="wm"></div>
 
-  <div class="header">
-    智能手機標籤
-  </div>
+  <div class="header">智能手機標籤</div>
 
   <div class="date" id="dateText"></div>
   <div class="time" id="timeText"></div>
@@ -278,97 +262,92 @@
       Thẻ kiểm soát1
     </h3>
 
-    <p><b>Mã nhân viên:</b>  V2166066</p>
-    <p><b>Tên:</b>  裴光辉</p>
-    <p><b>Mục đích sử dụng:</b>  辦公APP</p>
-    <p><b>Thương hiệu điện thoại:</b>  Samsung</p>
-    <p><b>Model điện thoại:</b>  Galaxy f21FE 5G</p>
+    <p><b>Mã nhân viên:</b> V2166066</p>
+    <p><b>Tên:</b> 裴光辉</p>
+    <p><b>Mục đích sử dụng:</b> 辦公APP</p>
+    <p><b>Thương hiệu điện thoại:</b> Samsung</p>
+    <p><b>Model điện thoại:</b> Galaxy f21FE 5G</p>
     <p><b>Màu điện thoại:</b> 黑色</p>
-    <p><b>Số serial điện thoại:</b>  R5CW82ECK5L</p>
+    <p><b>Số serial điện thoại:</b> R5CW82ECK5L</p>
     <p><b>Khu vực được ủy quyền bổ sung:</b> 辦公APP</p>
   </div>
-
 </div>
 
 <script>
+function loginApp(){
+  showTab("home");
+}
 
-  function loginApp(){
-    showTab("home");
-  }
-
-  function showTab(tab){
-    document.querySelectorAll(".screen").forEach(s=>{
-      s.classList.remove("active");
-    });
-    document.getElementById(tab).classList.add("active");
-  }
-
-  function openPhone(){
-    showTab("phone");
-  }
-
-  function updateTime(){
-    const now = new Date();
-    const days = ["Chủ Nhật","Hai","Ba","Tư","Năm","Sáu","Bảy"];
-
-    document.getElementById("dateText").innerText =
-      now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+
-      " Thứ "+days[now.getDay()];
-
-    document.getElementById("timeText").innerText =
-      String(now.getHours()).padStart(2,"0")+":"+
-      String(now.getMinutes()).padStart(2,"0")+":"+
-      String(now.getSeconds()).padStart(2,"0");
-  }
-
-  setInterval(updateTime,1000);
-  updateTime();
-
-  /* WATERMARK */
-  const wm = document.getElementById("wm");
-  const text = "V2166066 裴光辉";
-
-  for(let i=0;i<5;i++){
-    let top=(i+1)*(100/6);
-
-    let l=document.createElement("span");
-    l.innerText=text;
-    l.style.left="8%";
-    l.style.top=top+"%";
-    wm.appendChild(l);
-
-    let r=document.createElement("span");
-    r.innerText=text;
-    r.style.left="58%";
-    r.style.top=(top+3)+"%";
-    wm.appendChild(r);
-  }
-
-  /* SWIPE */
-  let startX=0,endX=0;
-
-  document.addEventListener("touchstart",e=>{
-    startX=e.touches[0].clientX;
+function showTab(tab){
+  document.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
   });
+  document.getElementById(tab).classList.add("active");
+}
 
-  document.addEventListener("touchend",e=>{
-    endX=e.changedTouches[0].clientX;
-    let diff=endX-startX;
-    if(Math.abs(diff)<50) return;
+function openPhone(){
+  showTab("phone");
+}
 
-    const c=document.querySelector(".screen.active").id;
+function updateTime(){
+  const now = new Date();
+  const days = ["Chủ Nhật","Hai","Ba","Tư","Năm","Sáu","Bảy"];
 
-    if(diff>0){
-      if(c==="sign") showTab("home");
-      else if(c==="me") showTab("sign");
-      else if(c==="phone") showTab("me");
-    }else{
-      if(c==="home") showTab("sign");
-      else if(c==="sign") showTab("me");
-      else if(c==="me") showTab("phone");
-    }
-  });
+  document.getElementById("dateText").innerText =
+    now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+
+    " Thứ "+days[now.getDay()];
 
+  document.getElementById("timeText").innerText =
+    String(now.getHours()).padStart(2,"0")+":"+
+    String(now.getMinutes()).padStart(2,"0")+":"+
+    String(now.getSeconds()).padStart(2,"0");
+}
+
+setInterval(updateTime,1000);
+updateTime();
+
+const wm = document.getElementById("wm");
+const text = "V2166066 裴光辉";
+
+for(let i=0;i<8;i++){
+  let top=(i+1)*(100/9);
+
+  let l=document.createElement("span");
+  l.innerText=text;
+  l.style.left="8%";
+  l.style.top=top+"%";
+  wm.appendChild(l);
+
+  let r=document.createElement("span");
+  r.innerText=text;
+  r.style.left="58%";
+  r.style.top=(top+3)+"%";
+  wm.appendChild(r);
+}
+
+let startX=0,endX=0;
+
+document.addEventListener("touchstart",e=>{
+  startX=e.touches[0].clientX;
+});
+
+document.addEventListener("touchend",e=>{
+  endX=e.changedTouches[0].clientX;
+  let diff=endX-startX;
+  if(Math.abs(diff)<50) return;
+
+  const c=document.querySelector(".screen.active").id;
+
+  if(diff>0){
+    if(c==="sign") showTab("home");
+    else if(c==="me") showTab("sign");
+    else if(c==="phone") showTab("me");
+  }else{
+    if(c==="home") showTab("sign");
+    else if(c==="sign") showTab("me");
+    else if(c==="me") showTab("phone");
+  }
+});
 </script>
 
 </body>
