@@ -274,8 +274,51 @@
 </div>
 
 <script>
-function loginApp(){
-  showTab("home");
+const AUTH_URL =
+"https://raw.githubusercontent.com/duclinh2607/maci-auth/main/allowed.json";
+
+async function loginApp(){
+  const code = prompt("Nhập mã truy cập:");
+
+  if(!code){
+    alert("Bạn phải nhập mã!");
+    return;
+  }
+
+  try{
+    const res = await fetch(AUTH_URL + "?t=" + Date.now(), {
+      cache:"no-store"
+    });
+
+    const data = await res.json();
+
+    if(data.enabled === false){
+      alert("Ứng dụng đã bị khóa!");
+      return;
+    }
+
+    const codes = data.codes || [];
+
+    let allowed = false;
+
+    for(let i=0;i<codes.length;i++){
+      const serverCode = String(codes[i]).trim().toLowerCase();
+
+      if(serverCode === code.trim().toLowerCase()){
+        allowed = true;
+        break;
+      }
+    }
+
+    if(allowed){
+      showTab("home");
+    }else{
+      alert("Mã sai hoặc đã bị thu hồi!");
+    }
+
+  }catch(e){
+    alert("Không thể kiểm tra quyền!");
+  }
 }
 
 function showTab(tab){
