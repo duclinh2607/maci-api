@@ -1,17 +1,10 @@
 {
   "name": "Mac II",
   "short_name": "Mac II",
-
-  "start_url": "./",
-
+  "start_url": "index.html",
   "display": "standalone",
-
-  "background_color": "#0c7fa0",
-
+  "background_color": "#000000",
   "theme_color": "#0c7fa0",
-
-  "orientation": "portrait",
-
   "icons": [
     {
       "src": "icon.png",
